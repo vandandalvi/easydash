@@ -4,6 +4,8 @@ import { Moon, Sun } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { AuthForm } from '@/components/forms/AuthForm';
 import { Button } from '@/components/ui/Button';
+import { ServerWarmupNotice } from '@/components/ui/ServerWarmupNotice';
+import { useBackendWarmup } from '@/hooks/useBackendWarmup';
 import { useAuthStore } from '@/store/authStore';
 import { useThemeStore } from '@/store/themeStore';
 
@@ -11,6 +13,7 @@ export function RegisterPage() {
   const navigate = useNavigate();
   const registerAction = useAuthStore((state) => state.registerAction);
   const { darkMode, toggleDarkMode } = useThemeStore();
+  const warmup = useBackendWarmup();
   const [loading, setLoading] = useState(false);
 
   return (
@@ -24,10 +27,22 @@ export function RegisterPage() {
           <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">Join Smart Leads to start managing leads</p>
         </div>
         <div className="rounded-lg border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+          <ServerWarmupNotice
+            isChecking={warmup.isChecking}
+            isWaking={warmup.isWaking}
+            etaSeconds={warmup.etaSeconds}
+            nextRetrySeconds={warmup.nextRetrySeconds}
+            onRetry={warmup.retryNow}
+          />
           <AuthForm
             type="register"
             loading={loading}
+            disabled={!warmup.isReady}
             onSubmit={async (values) => {
+              if (!warmup.isReady) {
+                toast('Backend is waking up. Please wait a few seconds.');
+                return;
+              }
               try {
                 setLoading(true);
                 await registerAction({

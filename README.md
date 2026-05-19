@@ -4,6 +4,9 @@ Full-stack MERN app:
 - Frontend: React + Vite + TypeScript + Tailwind
 - Backend: Express + TypeScript + MongoDB + Mongoose + JWT
 
+## Documentation
+- API docs: [API_DOCUMENTATION.md](./API_DOCUMENTATION.md)
+
 ## Local Setup
 
 ### 1. Frontend
@@ -22,6 +25,18 @@ npm run dev
 ```
 
 Backend runs on `http://localhost:5000`.
+
+## Docker Setup
+
+Run full stack with Docker:
+```bash
+docker compose up --build
+```
+
+Services:
+- Frontend: `http://localhost:5173`
+- Backend: `http://localhost:5000`
+- MongoDB: `mongodb://localhost:27017`
 
 ## MongoDB Setup (Atlas)
 

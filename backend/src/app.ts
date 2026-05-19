@@ -1,6 +1,8 @@
 import cors from 'cors';
 import express from 'express';
 import { env } from './config/env.js';
+import { errorHandler } from './middlewares/errorHandler.js';
+import { notFoundHandler } from './middlewares/notFound.js';
 import { authRouter } from './routes/auth.routes.js';
 import { leadRouter } from './routes/lead.routes.js';
 
@@ -20,3 +22,5 @@ app.get('/api/health', (_req, res) => {
 
 app.use('/api/auth', authRouter);
 app.use('/api/leads', leadRouter);
+app.use(notFoundHandler);
+app.use(errorHandler);
