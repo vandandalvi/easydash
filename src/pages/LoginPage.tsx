@@ -25,6 +25,7 @@ export function LoginPage() {
         <div className="mb-8 text-center">
           <h1 className="text-3xl font-bold text-slate-900 dark:text-white">Welcome back</h1>
           <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">Sign in to your Smart Leads account</p>
+          <p className="mt-2 text-xs font-medium text-slate-500 dark:text-slate-400">Built by Vandan Dalvi</p>
         </div>
         <div className="rounded-lg border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-700 dark:bg-slate-900">
           <ServerWarmupNotice
@@ -67,7 +68,6 @@ export function LoginPage() {
                 Sign up
               </Link>
             </p>
-            <p className="mt-3 text-[11px] text-slate-400 dark:text-slate-500">Built by Vandan Dalvi</p>
           </div>
         </div>
       </div>
