@@ -67,6 +67,7 @@ export function LoginPage() {
                 Sign up
               </Link>
             </p>
+            <p className="mt-3 text-[11px] text-slate-400 dark:text-slate-500">Built by Vandan Dalvi</p>
           </div>
         </div>
       </div>
