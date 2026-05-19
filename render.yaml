@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: smart-leads-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    plan: free
+    envVars:
+      - key: MONGODB_URI
+        value: REPLACE_WITH_MONGODB_URI
+      - key: JWT_SECRET
+        value: REPLACE_WITH_JWT_SECRET
+      - key: CLIENT_URL
+        value: https://your-vercel-frontend-url.vercel.app

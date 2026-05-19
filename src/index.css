@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
