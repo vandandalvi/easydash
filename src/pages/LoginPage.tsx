@@ -40,6 +40,11 @@ export function LoginPage() {
               }
             }}
           />
+          <div className="mt-4 rounded-lg border border-sky-200 bg-sky-50 p-3 text-xs text-slate-700 dark:border-sky-900/60 dark:bg-sky-950/30 dark:text-slate-300">
+            <p className="font-semibold text-slate-900 dark:text-white">Demo Credentials</p>
+            <p className="mt-1">Admin: <span className="font-medium">admin@smartleads.com</span> / <span className="font-medium">admin123</span></p>
+            <p className="mt-1">Register or use: <span className="font-medium">user@mail.com</span> / <span className="font-medium">user123</span></p>
+          </div>
           <div className="mt-6 border-t border-slate-200 pt-6 text-center dark:border-slate-700">
             <p className="text-sm text-slate-600 dark:text-slate-400">
               Don't have an account?{' '}
