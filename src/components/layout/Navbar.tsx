@@ -13,6 +13,7 @@ export function Navbar() {
         <div>
           <p className="text-base font-semibold text-slate-900 dark:text-white">Smart Leads</p>
           <p className="text-xs text-slate-500 dark:text-slate-400">Dashboard</p>
+          <p className="text-[11px] text-slate-400 dark:text-slate-500">Built by Vandan Dalvi</p>
         </div>
         <div className="flex items-center gap-4">
           <Button variant="ghost" onClick={toggleDarkMode} className="h-9 w-9 p-0">
